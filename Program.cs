@@ -44,10 +44,10 @@ namespace VirtualPet
 
             }
 
-            Console.WriteLine("\nYour pet's name is :" + petName);
+            Console.WriteLine("\nYour pet's name is :" + petName); // to display pet name
             Console.WriteLine("\n Welcome " + petName + "!" + "" + " Let's take good care of him");
          
-
+            // THis is main menu and options are listed
             Console.WriteLine("\n Menu:");
             Console.WriteLine("1.Feed " + petName);
             Console.WriteLine("2.Play with  " + petName);
