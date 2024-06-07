@@ -27,19 +27,19 @@ namespace VirtualPet
             switch (input)
             {
                 case "1":
-                    Console.WriteLine("You selected Cat...!, What would you like to name your Cat?");
+                    Console.WriteLine("You selected Cat...!, What would you like to name your Cat?"); // Accepts name for pet
                     petName = Console.ReadLine();
                     break;
                 case "2":
-                    Console.WriteLine("You selected Dog...! ,  What would you like to name your Dog?");
+                    Console.WriteLine("You selected Dog...! ,  What would you like to name your Dog?");// Accepts name for pet
                     petName = Console.ReadLine();
                     break;
                 case "3":
-                    Console.WriteLine("You selected Rabbit...!, What would you like to name your Rabbit?");
+                    Console.WriteLine("You selected Rabbit...!, What would you like to name your Rabbit?");// Accepts name for pet
                     petName = Console.ReadLine();
                     break;
                 default:
-                    Console.WriteLine("Invalid entry. Please enter 1, 2, or 3.");
+                    Console.WriteLine("Invalid entry. Please enter 1, 2, or 3.");// Validation for invalid entry
                     break;
 
             }
@@ -47,7 +47,9 @@ namespace VirtualPet
             Console.WriteLine("\nYour pet's name is :" + petName); // to display pet name
             Console.WriteLine("\n Welcome " + petName + "!" + "" + " Let's take good care of him");
 
-            int hunger = 5;
+            // declaring hunger,happiness and health values
+
+            int hunger = 5; 
             int happiness = 5;
             int health = 8;
 
@@ -61,7 +63,7 @@ namespace VirtualPet
                 Console.WriteLine("3.Let " + petName + " Take Rest");
                 Console.WriteLine("4.Check " + petName + "'s status");
                 Console.WriteLine("5.Exit");
-                string menuInput = Console.ReadLine();
+                string menuInput = Console.ReadLine(); // Accepts user's input
 
                 if (menuInput == "1")
                 {
@@ -69,7 +71,7 @@ namespace VirtualPet
                     health++;
                     Console.WriteLine("You feed " + petName + ". His hunger decreases and health improve slighlty!!");
 
-
+                    // Displays feeding related text if user selected option 1
 
 
                 }
@@ -79,6 +81,8 @@ namespace VirtualPet
                     happiness = happiness + 2;
                     hunger++;
                     Console.WriteLine("You played with " + petName + ". His happiness increases but he is bit hungry!");
+
+                    // Displays playing related text if user selected option 2
 
 
 
@@ -91,6 +95,8 @@ namespace VirtualPet
                     happiness--;
                     Console.WriteLine("Your " + petName + " took rest, His health increases but his happiness decreased!");
 
+                    // Displays restinging related text if user selected option 3
+
 
                 }
 
@@ -101,17 +107,27 @@ namespace VirtualPet
                     Console.WriteLine("-Hunger:" + hunger + "\n-Happiness:" + happiness + "\n-Health:" + health);
                     Console.ReadLine();
 
+
+                    // Displays restinging related text if user selected option 3
                 }
 
                 if (menuInput == "5")
                 {
-                    Console.WriteLine("Thank you for playing with " + petName +"!!");
+                    Console.WriteLine("Thank you for playing with " + petName + "!!");
                     Console.ReadLine();
 
                     break;
 
+                    //Option to exit from the game if the user selected option 5.
+
                 }
 
+
+                // Alert for user to denote the pet is in extreem conditions.
+                if (hunger == 2)
+                {
+                    Console.WriteLine("ALERT: " + petName + " is very hungry! Please feed them soon.");
+                }
 
 
 
