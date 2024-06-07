@@ -45,11 +45,11 @@ namespace VirtualPet
             }
 
             Console.WriteLine("\nYour pet's name is :" + petName); // to display pet name
-            Console.WriteLine("\n Welcome " + petName + "!" + "" + " Let's take good care of him");
+            Console.WriteLine("\nWelcome " + petName + "!" + "" + " Let's take good care of him");
 
             // declaring hunger,happiness and health values
 
-            int hunger = 5; 
+            int hunger = 5;
             int happiness = 5;
             int health = 8;
 
@@ -57,7 +57,7 @@ namespace VirtualPet
 
             {
                 // THis is main menu and options are listed
-                Console.WriteLine("\n Menu:");
+                Console.WriteLine("\nMenu:");
                 Console.WriteLine("1.Feed " + petName);
                 Console.WriteLine("2.Play with  " + petName);
                 Console.WriteLine("3.Let " + petName + " Take Rest");
@@ -67,9 +67,10 @@ namespace VirtualPet
 
                 if (menuInput == "1")
                 {
-                    hunger = hunger + 2;
+                    hunger -= 2;// decreases hunger on playing
                     health++;
                     Console.WriteLine("You feed " + petName + ". His hunger decreases and health improve slighlty!!");
+
 
                     // Displays feeding related text if user selected option 1
 
@@ -95,6 +96,7 @@ namespace VirtualPet
                     happiness--;
                     Console.WriteLine("Your " + petName + " took rest, His health increases but his happiness decreased!");
 
+
                     // Displays restinging related text if user selected option 3
 
 
@@ -105,7 +107,20 @@ namespace VirtualPet
                 {
                     Console.WriteLine(petName + "'s status:");
                     Console.WriteLine("-Hunger:" + hunger + "\n-Happiness:" + happiness + "\n-Health:" + health);
-                    Console.ReadLine();
+
+                    if (hunger > 6) // if hunger is greater than 6 then message to feed the pet
+                    {
+                        Console.WriteLine("Alert!!!: " + petName + " is hungry! Please feed your ." + petName);
+                    }
+
+                    if (health < 6)
+                    {
+                        Console.WriteLine("Alert!" + petName + "'s health is decreasing, please give him some rest");
+
+                        //If health decreases , giving alert to user asking for REST
+ 
+
+                    }
 
 
                     // Displays restinging related text if user selected option 3
@@ -123,11 +138,7 @@ namespace VirtualPet
                 }
 
 
-                // Alert for user to denote the pet is in extreem conditions.
-                if (hunger == 2)
-                {
-                    Console.WriteLine("ALERT: " + petName + " is very hungry! Please feed them soon.");
-                }
+
 
 
 
@@ -142,4 +153,5 @@ namespace VirtualPet
 
     }
 }
+
 
