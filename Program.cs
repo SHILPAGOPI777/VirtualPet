@@ -51,8 +51,8 @@ namespace VirtualPet
             int happiness = 5;
             int health = 8;
 
-            while (true) 
-                
+            while (true)
+
             {
                 // THis is main menu and options are listed
                 Console.WriteLine("\n Menu:");
@@ -63,6 +63,38 @@ namespace VirtualPet
                 Console.WriteLine("5.Exit");
                 string menuInput = Console.ReadLine();
 
+                if (menuInput == "1")
+                {
+                    hunger = hunger + 2;
+                    health++;
+                    Console.WriteLine("You feed " + petName + ". His hunger decreases and health improve slighlty!!");
+
+
+
+
+                }
+
+                if (menuInput == "2")
+                {
+                    happiness = happiness + 2;
+                    hunger++;
+                    Console.WriteLine("You played with " + petName + ". His happiness increases but he is bit hungry!");
+
+
+
+
+                }
+
+                if (menuInput == "3")
+                {
+                    health = health + 2;
+                    happiness--;
+                    Console.WriteLine("Your " + petName + " took rest, His health increases but his happiness decreased!");
+
+
+                }
+
+
                 if (menuInput == "4")
                 {
                     Console.WriteLine(petName + "'s status:");
@@ -70,30 +102,17 @@ namespace VirtualPet
                     Console.ReadLine();
 
                 }
-                if (menuInput == "1")
-                {
-                    hunger = hunger + 2;
-                    health++;
-                    Console.WriteLine("You feed" + petName + "His hunger decreases and health improve slighlty!!");
-                    
-                    
 
+                if (menuInput == "5")
+                {
+                    Console.WriteLine("Thank you for playing with " + petName +"!!");
+                    Console.ReadLine();
+
+                    break;
 
                 }
-                if (menuInput == "2")
-                {
-                    happiness = happiness + 2;
-                     hunger++;
 
 
-                }
-                if (menuInput == "3")
-                {
-                    health = health+2;
-                     happiness--;
-
-
-                }
 
 
             }
