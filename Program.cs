@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace VirtualPet
@@ -99,6 +100,7 @@ namespace VirtualPet
                 {
                     health = health + 2;
                     happiness--;
+                    hunger++;
                     Console.WriteLine("Your " + petName + " took rest, His health increases but his happiness decreased & he needs to eat!");
 
 
@@ -137,12 +139,12 @@ namespace VirtualPet
 
                 if (menuInput == "5")
                 {
-                    Console.WriteLine("Thank you for playing with " + petName + "!!");
-                    Console.ReadLine();
+                    Console.WriteLine("Thank you for playing with " + petName + "!!"); //Option to exit from the game if the user selected option 5.
+                    Thread.Sleep(3000); // Hold for 3 seconds
 
                     break;
 
-                    //Option to exit from the game if the user selected option 5.
+                    
 
                 }
 
