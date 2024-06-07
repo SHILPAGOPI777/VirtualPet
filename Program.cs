@@ -13,14 +13,14 @@ namespace VirtualPet
             Console.WriteLine("Welcome to Virtual  Pet Game....!!!!\n\n"); //Welcome Message 
 
 
-            Console.WriteLine("Please Choose a type of PET\n\n");
+            Console.WriteLine("Please Choose a type of PET\n\n"); // Option to choose pet type
 
 
             Console.WriteLine("1. Cat");
             Console.WriteLine("2. Dog");
             Console.WriteLine("3. Rabbit");
 
-            string input = Console.ReadLine();
+            string input = Console.ReadLine(); // accepts user's input
             string petName = "";
 
 
@@ -46,15 +46,63 @@ namespace VirtualPet
 
             Console.WriteLine("\nYour pet's name is :" + petName); // to display pet name
             Console.WriteLine("\n Welcome " + petName + "!" + "" + " Let's take good care of him");
-         
-            // THis is main menu and options are listed
-            Console.WriteLine("\n Menu:");
-            Console.WriteLine("1.Feed " + petName);
-            Console.WriteLine("2.Play with  " + petName);
-            Console.WriteLine("3.Let " + petName +" Take Rest");
-            Console.WriteLine("4.Check " + petName+"'s status");
-            Console.WriteLine("5.Exit");
-            Console.ReadLine();
+
+            int hunger = 5;
+            int happiness = 5;
+            int health = 8;
+
+            while (true) 
+                
+            {
+                // THis is main menu and options are listed
+                Console.WriteLine("\n Menu:");
+                Console.WriteLine("1.Feed " + petName);
+                Console.WriteLine("2.Play with  " + petName);
+                Console.WriteLine("3.Let " + petName + " Take Rest");
+                Console.WriteLine("4.Check " + petName + "'s status");
+                Console.WriteLine("5.Exit");
+                string menuInput = Console.ReadLine();
+
+                if (menuInput == "4")
+                {
+                    Console.WriteLine(petName + "'s status:");
+                    Console.WriteLine("-Hunger:" + hunger + "\n-Happiness:" + happiness + "\n-Health:" + health);
+                    Console.ReadLine();
+
+                }
+                if (menuInput == "1")
+                {
+                    hunger = hunger + 2;
+                    health++;
+                    Console.WriteLine("You feed" + petName + "His hunger decreases and health improve slighlty!!");
+                    
+                    
+
+
+                }
+                if (menuInput == "2")
+                {
+                    happiness = happiness + 2;
+                     hunger++;
+
+
+                }
+                if (menuInput == "3")
+                {
+                    health = health+2;
+                     happiness--;
+
+
+                }
+
+
+            }
+
+
+
+
+
+
         }
 
     }
