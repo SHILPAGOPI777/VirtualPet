@@ -120,8 +120,8 @@ namespace VirtualPet
                     {
                         Console.WriteLine("Alert!!!: " + petName + " is hungry, pet is refusing to play! Please feed " + petName);
                     }
-                    
-                    
+
+
                     if (hunger == 1) // Alerting to stop feeding if hunger is 1
                         Console.WriteLine("Alert!!!: " + petName + " is full.Stop Feeding to proceed...!!");
 
